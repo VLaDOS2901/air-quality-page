@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/air-quality-page/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>air-quality-page</title>
-    <script type="module" crossorigin src="/air-quality-page/assets/index-DHA-yQzg.js"></script>
+    <script type="module" crossorigin src="/air-quality-page/assets/index-BkmN69Dt.js"></script>
     <link rel="stylesheet" crossorigin href="/air-quality-page/assets/index-C9L3IgjK.css">
   </head>
   <body>
@@ -14,10 +14,12 @@
     </header>    
     <main>
       <div id="cards"></div>
-      <select id="sort-order">
-        <option>За назвою</option>
-        <option>За значенням, за найвищим спочатку</option>
-      </select>
+        <select id="sort-order">
+          <option value="asc">За назвою (А-Я)</option>
+          <option value="desc">За назвою (Я-А)</option>
+          <option value="pm25-desc">За значенням PM2.5 (найвище спочатку)</option>
+        </select>
+
     </main>
   </body>
 </html>
