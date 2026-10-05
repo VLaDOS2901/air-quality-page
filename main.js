@@ -40,9 +40,19 @@ async function fetchAndRenderCards() {
 
     const sortOrderSelect = document.getElementById('sort-order');
     sortOrderSelect.addEventListener('change', () => {
-      const sortedCities = [...cities].sort((a, b) => {
-        return sortOrderSelect.value === 'asc' ? a.city.localeCompare(b.city) : b.city.localeCompare(a.city);
-      });
+      let sortedCities = [...cities];
+
+      if (sortOrderSelect.value === 'asc') {
+        sortedCities = [...cities].sort((a, b) => a.city.localeCompare(b.city));
+      } else if (sortOrderSelect.value === 'desc') {
+        sortedCities = [...cities].sort((a, b) => b.city.localeCompare(a.city));
+      } else if (sortOrderSelect.value === 'pm25-desc') {
+        sortedCities = [...cities].sort((a, b) => {
+          const aVal = parseFloat(a.average);
+          const bVal = parseFloat(b.average);
+          return bVal - aVal;
+        });
+      }
 
       cardsContainer.innerHTML = '';
       sortedCities.forEach(({ city, average }) => {

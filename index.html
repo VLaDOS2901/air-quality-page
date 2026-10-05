@@ -13,10 +13,12 @@
     </header>    
     <main>
       <div id="cards"></div>
-      <select id="sort-order">
-        <option>За назвою</option>
-        <option>За значенням, за найвищим спочатку</option>
-      </select>
+        <select id="sort-order">
+          <option value="asc">За назвою (А-Я)</option>
+          <option value="desc">За назвою (Я-А)</option>
+          <option value="pm25-desc">За значенням PM2.5 (найвище спочатку)</option>
+        </select>
+
     </main>
     <script type="module" src="main.js"></script>
   </body>
